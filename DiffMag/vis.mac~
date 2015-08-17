@@ -1,0 +1,59 @@
+
+/vis/open HepRepFile
+#/vis/open OGLSXm
+
+/vis/drawVolume
+
+# for drawing the tracks
+/vis/scene/add/trajectories
+
+# (if you prefer refreshing each event, comment out next line)
+/vis/scene/endOfEventAction accumulate
+
+#/Micromegas/det/setField 500 gauss
+		
+/Micromegas/det/setCupThick 1 um
+
+/Leetech/det/SetCollimatorEntranceGapX 20 mm
+/Leetech/det/SetCollimatorEntranceGapY 20 mm
+/Leetech/det/SetCollimatorExit1GapX 20 mm
+/Leetech/det/SetCollimatorExit1GapY 20 mm
+
+#equal to first colim gap
+#/Micromegas/det/setApertureRaduis 1 cm
+/Micromegas/det/setApertureRaduis 2 cm
+
+#equal to sec colim gap
+#/Micromegas/det/setApertureThick 1.4 cm
+/Micromegas/det/setApertureThick 2 cm
+
+#/Micromegas/det/setDet1InRad 0 mm unusable for now
+
+/Micromegas/det/setDet1OutRad 1 cm
+
+#distance from the edge to beginning of the collimator system
+/Micromegas/det/setDet1X 20 mm
+
+/Micromegas/det/setRotationDeg 23 deg
+#/Micromegas/det/setRotationAddDist 6.5 cm
+/Micromegas/det/setRotationAddDist 65 cm
+
+/Micromegas/det/setMaxStep 10 mm
+/Micromegas/det/setMaxLength 5.0 m
+/Micromegas/det/setMaxTime 20 s
+/Micromegas/det/setMinEkin 10 keV
+/Micromegas/det/setMionRang 0.01 mm
+
+/run/initialize
+#gamma, e-, e+, mu-, mu+, pi-, pi+, kaon-, kaon+, anti_proton, proton
+#/Micromegas/gun/PerticleType e- 
+
+#/Micromegas/gun/ParticlePosition 210 0 -161.193
+#/Micromegas/gun/ParticleDirection 39 0.0 92
+#/Micromegas/gun/ParticleDirectionRMS 0.0 0.0 0.0
+/Micromegas/gun/ParticleEnergy 3.5 MeV
+
+#/Leetech/RootFile LeetechVis
+#/Micromegas/printModulo 100000
+
+/run/beamOn 500
