@@ -12,7 +12,7 @@
 
 #/Micromegas/det/setField 500 gauss
 		
-/Micromegas/det/setCupThick 1 um
+/Micromegas/det/setCupThick 100 um
 
 /Leetech/det/SetCollimatorEntranceGapX 20 mm
 /Leetech/det/SetCollimatorEntranceGapY 20 mm
@@ -43,7 +43,7 @@
 /Micromegas/det/setMaxTime 20 s
 /Micromegas/det/setMinEkin 10 keV
 /Micromegas/det/setMionRang 0.01 mm
-
+/run/numberOfThreads 4
 /run/initialize
 #gamma, e-, e+, mu-, mu+, pi-, pi+, kaon-, kaon+, anti_proton, proton
 #/Micromegas/gun/PerticleType e- 
@@ -51,9 +51,9 @@
 #/Micromegas/gun/ParticlePosition 210 0 -161.193
 #/Micromegas/gun/ParticleDirection 39 0.0 92
 #/Micromegas/gun/ParticleDirectionRMS 0.0 0.0 0.0
-#/Micromegas/gun/ParticleEnergy 3.5 MeV
-
+/gun/energy 3.7 MeV
+/control/execute gun.mac
 #/Leetech/RootFile LeetechVis
 #/Micromegas/printModulo 100000
 
-/run/beamOn 500
+#/run/beamOn 500
